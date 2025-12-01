@@ -8,7 +8,7 @@
 // @grant        none
 // ==/UserScript==
 
-(async function(){
+(function(){
   'use strict';
   //变量定义
   const v1 = 120
