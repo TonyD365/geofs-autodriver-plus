@@ -54,16 +54,16 @@
     }
   }
   async function setRoll(value){
-    if (geofs.aircraft.instance.controls.roll > value){
-      for (let i = geofs.aircraft.instance.controls.roll;i > value;i = geofs.aircraft.instance.controls.roll){
-        geofs.aircraft.instance.controls.roll -= 0.03
+    if (geofs.animation.values.roll > value){
+      for (let i = geofs.animation.values.roll;i > value;i = geofs.animation.values.roll){
+        controls.axisSetters.roll.process(geofs.animation.values.roll - 0.03)
       }
-      geofs.aircraft.instance.controls.roll = value
-    }else if (geofs.aircraft.instance.controls.roll < value){
-      for (let i = geofs.aircraft.instance.controls.roll;i < value;i  = geofs.aircraft.instance.controls.roll){
-        geofs.aircraft.instance.controls.roll += 0.03
+      controls.axisSetters.roll.process(value);
+    }else if (geofs.animation.values.roll < value){
+      for (let i = geofs.animation.values.roll;i < value;i = geofs.animation.values.roll){
+        controls.axisSetters.roll.process(geofs.animation.values.roll + 0.03)
       }
-      geofs.aircraft.instance.controls.roll = value
+      controls.axisSetters.roll.process(value)
     }
   }
   async function setPitch(value){
