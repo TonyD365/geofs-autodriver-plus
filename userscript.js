@@ -6,6 +6,7 @@
 // @author       PancakeTD (TonyDong)
 // @match        *://geo-fs.com/geofs.php?*
 // @grant        none
+// @run-at       document-idle
 // ==/UserScript==
 
 (function(){
