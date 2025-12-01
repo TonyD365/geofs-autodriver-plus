@@ -16,7 +16,7 @@
   const rightTurnMax = 0.4
   const leftTurnMax = -0.4
   let targetPitch = 0
-  let targetPitchDo = 0
+  let targetPitchAngle = 0
   let targetLookAt = 0
   let targetRollAngle = 0
   let targetSpeed = 0
@@ -89,10 +89,12 @@
     //roll
     let nowAngle = geofs.aircraft.instance.orientation.roll * (180 / Math.PI)
     setRoll((1/90) * targetRollAngle - nowAngle * (1/90))
+    nowAngle = geofs.aircraft.instance.orientation.roll * (180 / Math.PI)
+    setPitch((1/90) * targetPitchAngle - nowAngle * (1/90))
   }, 100);
 
   //loop
-  setInterval(async() => {
+  const loop = setInterval(async() => {
     if (zhuangtai == "takeoff") takeoff()
   }, 200);
 
