@@ -14,6 +14,10 @@
   const v1 = 120
   const rightTurnMax = 0.4
   const leftTurnMax = -0.4
+  let targetPitch = 0
+  let targetPitchDo = 0
+  let targetLookAt = 0
+  let targetRollAngle = 0
   
   //操作函数定义
   async function setThrottle(value){
