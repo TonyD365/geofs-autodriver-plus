@@ -67,16 +67,16 @@
     }
   }
   async function setPitch(value){
-    if (geofs.aircraft.instance.controls.pitch > value){
-      for (let i = geofs.aircraft.instance.controls.pitch;i > valsue;i = geofs.aircraft.instance.controls.pitch){
-        geofs.aircraft.instance.controls.pitch -= 0.03
+    if (geofs.animation.values.pitch > value){
+      for (let i = geofs.animation.values.pitch;i > value;i = geofs.animation.values.pitch){
+        controls.axisSetters.pitch.process(geofs.animation.values.pitch - 0.03)
       }
-      geofs.aircraft.instance.controls.pitch = value
-    }else if (geofs.aircraft.instance.controls.pitch < value){
-      for (let i = geofs.aircraft.instance.controls.pitch;i < value;i = geofs.aircraft.instance.controls.pitch){
-        geofs.aircraft.instance.controls.pitch += 0.03
+      controls.axisSetters.pitch.process(value);
+    }else if (geofs.animation.values.pitch < value){
+      for (let i = geofs.animation.values.pitch;i < value;i = geofs.animation.values.pitch){
+        controls.axisSetters.pitch.process(geofs.animation.values.pitch + 0.03)
       }
-      geofs.aircraft.instance.controls.pitch = value
+      controls.axisSetters.pitch.process(value)
     }
   }
   function readSpeed(){
