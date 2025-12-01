@@ -8,7 +8,8 @@
 // @match        https://*.geo-fs.com/geofs.php*
 // @grant        none
 // @run-at       document-idle
-// @downloadURL  
+// @downloadURL  https://raw.githubusercontent.com/TonyD365/geofs-autodriver-plus/refs/heads/main/userscript.js
+// @updateURL    https://raw.githubusercontent.com/TonyD365/geofs-autodriver-plus/refs/heads/main/userscript.js
 // ==/UserScript==
 
 (function(){
