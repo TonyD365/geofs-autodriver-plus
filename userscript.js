@@ -10,6 +10,12 @@
 
 (async function(){
   'use strict';
+  //变量定义
+  const v1 = 120
+  const rightTurnMax = 0.4
+  const leftTurnMax = -0.4
+  
+  //操作函数定义
   function setThrottle(value){
     if (geofs.aircraft.instance.engine.throttle > value){
       for (let i = geofs.aircraft.instance.engine.throttle;i < value;i = geofs.aircraft.instance.engine.throttle){
