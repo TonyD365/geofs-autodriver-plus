@@ -8,6 +8,7 @@
 // @match        https://*.geo-fs.com/geofs.php*
 // @grant        none
 // @run-at       document-idle
+// @downloadURL  
 // ==/UserScript==
 
 (function(){
