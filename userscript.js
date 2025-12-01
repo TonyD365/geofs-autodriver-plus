@@ -19,7 +19,9 @@
   let targetPitchDo = 0
   let targetLookAt = 0
   let targetRollAngle = 0
+  let targetSpeed = 0
   let zhuangtai = "takeoff"
+  let isInAuto = false
   
   //操作函数定义
   async function setThrottle(value){
@@ -73,6 +75,9 @@
       }
       geofs.aircraft.instance.controls.pitch = value
     }
+  }
+  function readSpeed(){
+    return geofs.aircraft.instance.airspeed
   }
 
   //takeoff
