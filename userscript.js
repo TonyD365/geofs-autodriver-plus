@@ -1,10 +1,11 @@
 // ==UserScript==
-// @name         geofs autodriver++
-// @namespace    https://geofs.com
-// @version      1.0
-// @description  Auto Takeoff+Auto land+AP PlusPlus
-// @author       PancakeTD (TonyDong)
-// @match        *://geo-fs.com/geofs.php?*
+// @name         GeoFS Autodriver++
+// @namespace    https://github.com/yourname
+// @version      1.3.1
+// @description  Auto Takeoff + Auto Land + AP
+// @author       PancakeTD
+// @match        https://geo-fs.com/geofs.php*
+// @match        https://*.geo-fs.com/geofs.php*
 // @grant        none
 // @run-at       document-idle
 // ==/UserScript==
@@ -22,7 +23,7 @@
   let targetSpeed = 0
   let zhuangtai = "takeoff"
   let isInAuto = false
-  
+
   //操作函数定义
   async function setThrottle(value){
     if (geofs.aircraft.instance.engine.throttle > value){
