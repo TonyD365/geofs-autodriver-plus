@@ -29,5 +29,4 @@
       geofs.aircraft.instance.engine.throttle = value
     }
   }
-  
-}){}
+})()
