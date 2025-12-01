@@ -41,16 +41,16 @@
     }
   }
   async function setYaw(value){
-    if (geofs.aircraft.instance.controls.yaw > value){
-      for (let i = geofs.aircraft.instance.controls.yaw;i > value;i = geofs.aircraft.instance.controls.yaw){
-        controls.axisSetters.yaw.process -= 0.05;
+    if (geofs.animation.values.yaw > value){
+      for (let i = geofs.animation.values.yaw;i > value;i = geofs.animation.values.yaw){
+        controls.axisSetters.yaw.process(geofs.animation.values.yaw - 0.05)
       }
-      controls.axisSetters.yaw.process = value;
-    }else if (geofs.aircraft.instance.controls.yaw < value){
-      for (let i = geofs.aircraft.instance.controls.yaw;i < value;i = geofs.aircraft.instance.controls.yaw){
-        controls.axisSetters.yaw.process += 0.05;
+      controls.axisSetters.yaw.process(value);
+    }else if (geofs.animation.values.yaw < value){
+      for (let i = geofs.animation.values.yaw;i < value;i = geofs.animation.values.yaw){
+        controls.axisSetters.yaw.process(geofs.animation.values.yaw + 0.05)
       }
-      controls.axisSetters.yaw.process = value
+      controls.axisSetters.yaw.process(value)
     }
   }
   async function setRoll(value){
