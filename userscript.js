@@ -91,6 +91,11 @@
     setRoll((1/90) * targetRollAngle - nowAngle * (1/90))
     nowAngle = geofs.aircraft.instance.orientation.roll * (180 / Math.PI)
     setPitch((1/90) * targetPitchAngle - nowAngle * (1/90))
+    const nowSpeed = readSpeed()
+    const cha = targetSpeed - nowSpeed
+    if (cha > 15){
+      setThrottle(1)
+    }else if (cha < 15 ){}
   }, 100);
 
   //loop
