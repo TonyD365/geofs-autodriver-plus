@@ -90,10 +90,10 @@
 
   const keepTargetInterval = setInterval(() => {
     //roll
-    let nowAngle = geofs.animation.values.roll * (180 / Math.PI)
+    let nowAngle = geofs.aircraft.instance.orientation.roll * (180 / Math.PI)
     setRoll((1/90) * targetRollAngle - nowAngle * (1/90))
     //
-    nowAngle = geofs.animation.values.roll * (180 / Math.PI)
+    nowAngle = geofs.aircraft.instance.orientation.roll * (180 / Math.PI)
     setPitch((1/90) * targetPitchAngle - nowAngle * (1/90))
     const nowSpeed = readSpeed()
     const cha = targetSpeed - nowSpeed
