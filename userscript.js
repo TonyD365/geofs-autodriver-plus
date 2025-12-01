@@ -80,7 +80,7 @@
     }
   }
   function readSpeed(){
-    return geofs.aircraft.instance.airspeed
+    return geofs.animation.values.airspeedms
   }
 
   //takeoff
