@@ -28,29 +28,29 @@
 
   //操作函数定义
   async function setThrottle(value){
-    if (geofs.aircraft.instance.engine.throttle > value){
-      for (let i = geofs.aircraft.instance.engine.throttle;i > value;i = geofs.aircraft.instance.engine.throttle){
-        controls.axisSetters.throttle.process -= 0.05
+    if (geofs.animation.values.throttle > value){
+      for (let i = geofs.animation.values.throttle;i > value;i = geofs.animation.values.throttle){
+        controls.axisSetters.throttlereverse.process(geofs.animation.values.throttle - 0.05)
       }
-      geofs.aircraft.instance.engine.throttle = value
-    }else if (geofs.aircraft.instance.engine.throttle < value){
-      for (let i = geofs.aircraft.instance.engine.throttle;i < value;i = geofs.aircraft.instance.engine.throttle){
-        controls.axisSetters.throttle.process += 0.05;
+      controls.axisSetters.throttle.process(value)
+    }else if (geofs.animation.values.throttle < value){
+      for (let i = geofs.animation.values.throttle;i < value;i = geofs.animation.values.throttle){
+        controls.axisSetters.throttle.process(geofs.animation.values.throttle + 0.05);
       }
-      geofs.aircraft.instance.engine.throttle = value
+      controls.axisSetters.throttle.process(value)
     }
   }
   async function setYaw(value){
     if (geofs.aircraft.instance.controls.yaw > value){
       for (let i = geofs.aircraft.instance.controls.yaw;i > value;i = geofs.aircraft.instance.controls.yaw){
-        geofs.aircraft.instance.controls.yaw -= 0.05;
+        controls.axisSetters.yaw.process -= 0.05;
       }
-      geofs.aircraft.instance.controls.yaw = value;
+      controls.axisSetters.yaw.process = value;
     }else if (geofs.aircraft.instance.controls.yaw < value){
       for (let i = geofs.aircraft.instance.controls.yaw;i < value;i = geofs.aircraft.instance.controls.yaw){
-        geofs.aircraft.instance.controls.yaw += 0.05;
+        controls.axisSetters.yaw.process += 0.05;
       }
-      geofs.aircraft.instance.controls.yaw = value
+      controls.axisSetters.yaw.process = value
     }
   }
   async function setRoll(value){
