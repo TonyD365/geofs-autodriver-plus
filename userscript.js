@@ -87,7 +87,8 @@
 
   const keepTargetInterval = setInterval(() => {
     //roll
-    setRoll((1/90) * targetRollAngle)
+    let nowAngle = geofs.aircraft.instance.orientation.roll * (180 / Math.PI)
+    setRoll((1/90) * targetRollAngle - nowAngle * (1/90))
   }, 100);
 
   //loop
