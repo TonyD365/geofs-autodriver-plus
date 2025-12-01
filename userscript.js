@@ -46,4 +46,17 @@
       geofs.aircraft.instance.controls.yaw = value
     }
   }
+  async function setRoll(value){
+    if (geofs.aircraft.instance.controls.roll > value){
+      for (let i = geofs.aircraft.instance.controls.roll;i > value;i = geofs.aircraft.instance.controls.roll){
+        geofs.aircraft.instance.controls.roll -= 0.03
+      }
+      geofs.aircraft.instance.controls.roll = value
+    }else if (geofs.aircraft.instance.controls.roll < value){
+      for (let i = geofs.aircraft.instance.controls.roll;i < value;i  = geofs.aircraft.instance.controls.roll){
+        geofs.aircraft.instance.controls.roll += 0.03
+      }
+      geofs.aircraft.instance.controls.roll = value
+    }
+  }
 })()
