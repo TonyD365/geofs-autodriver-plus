@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         geofs autodriver++
-// @namespace    https://
+// @namespace    https://geofs.com
 // @version      1.0
-// @description  在网页右下角添加返回顶部按钮
-// @author       You
-// @match        *://*/*
+// @description  Auto Takeoff+Auto land+AP PlusPlus
+// @author       PancakeTD (TonyDong)
+// @match        *://geo-fs.com/geofs.php?*
 // @grant        none
 // ==/UserScript==
