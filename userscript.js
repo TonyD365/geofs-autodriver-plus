@@ -30,12 +30,12 @@
   async function setThrottle(value){
     if (geofs.aircraft.instance.engine.throttle > value){
       for (let i = geofs.aircraft.instance.engine.throttle;i > value;i = geofs.aircraft.instance.engine.throttle){
-        controlers -= 0.05
+        controls.axisSetters.throttle.process -= 0.05
       }
       geofs.aircraft.instance.engine.throttle = value
     }else if (geofs.aircraft.instance.engine.throttle < value){
       for (let i = geofs.aircraft.instance.engine.throttle;i < value;i = geofs.aircraft.instance.engine.throttle){
-        geofs.aircraft.instance.engine.throttle += 0.05;
+        controls.axisSetters.throttle.process += 0.05;
       }
       geofs.aircraft.instance.engine.throttle = value
     }
