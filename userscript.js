@@ -85,6 +85,11 @@
     zhuangtai = "takeoff"
   }
 
+  const keepTargetInterval = setInterval(() => {
+    //roll
+    setRoll((1/90) * targetRollAngle)
+  }, 100);
+
   //loop
   setInterval(async() => {
     if (zhuangtai == "takeoff") takeoff()
