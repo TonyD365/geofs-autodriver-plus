@@ -95,7 +95,15 @@
     const cha = targetSpeed - nowSpeed
     if (cha > 15){
       setThrottle(1)
-    }else if (cha < 15 ){}
+    }else if (cha < 15 && cha > 10){
+      setThrottle(0.75)
+    }else if (cha < 10 && cha > 5){
+      setThrottle(0.4)
+    }else if (cha < 5 && cha > 1){
+      setThrottle(0.15)
+    }else{
+      setThrottle(0)
+    }
   }, 100);
 
   //loop
