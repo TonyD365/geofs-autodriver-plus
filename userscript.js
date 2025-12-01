@@ -19,6 +19,7 @@
   let targetPitchDo = 0
   let targetLookAt = 0
   let targetRollAngle = 0
+  let zhuangtai = "takeoff"
   
   //操作函数定义
   async function setThrottle(value){
@@ -60,6 +61,29 @@
       geofs.aircraft.instance.controls.roll = value
     }
   }
+<<<<<<< HEAD
+  async function setPitch(value){
+    if (geofs.aircraft.instance.controls.pitch > value){
+      for (let i = geofs.aircraft.instance.controls.pitch;i > valsue;i = geofs.aircraft.instance.controls.pitch){
+        geofs.aircraft.instance.controls.pitch -= 0.03
+      }
+      geofs.aircraft.instance.controls.pitch = value
+    }else if (geofs.aircraft.instance.controls.pitch < value){
+      for (let i = geofs.aircraft.instance.controls.pitch;i < value;i = geofs.aircraft.instance.controls.pitch){
+        geofs.aircraft.instance.controls.pitch += 0.03
+      }
+      geofs.aircraft.instance.controls.pitch = value
+    }
+  }
+
+  //takeoff
+  async function takeoff(){
+    zhuangtai = "takeoff"
+  }
+  setInterval(async() => {
+    if (zhuangtai == "takeoff") takeoff()
+  }, 200);
+
   async function setPitch(value){
     if (geofs.aircraft.instance.controls.pitch > value){
       for (let i = geofs.aircraft.instance.controls.pitch;i > valsue;i = geofs.aircraft.instance.controls.pitch){
@@ -76,4 +100,5 @@
   setInterval(() => {
     
   }, 200);
+>>>>>>> 668b346845d5a170cc145e63ce897f98df518d39
 })()
